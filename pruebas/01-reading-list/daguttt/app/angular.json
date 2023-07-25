@@ -15,7 +15,8 @@
           "standalone": true,
           "changeDetection": "OnPush",
           "skipTests": true,
-          "inlineStyle": true
+          "inlineStyle": true,
+          "displayBlock": true
         },
         "@schematics/angular:directive": {
           "standalone": true,
