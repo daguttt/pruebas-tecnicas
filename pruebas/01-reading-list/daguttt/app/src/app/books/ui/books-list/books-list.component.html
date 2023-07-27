@@ -1,0 +1,16 @@
+<ul class="flex gap-6 md:flex-wrap">
+  <li
+    *ngFor="let book of books; trackBy: trackByBookISBN"
+    [ngClass]="['aspect-[3/4]', coverWidthClasses]">
+    <picture class="mb-3 block">
+      <img
+        [src]="book.cover"
+        alt="{{ book.title }} cover image"
+        [ngClass]="['h-64', coverWidthClasses]" />
+    </picture>
+    <h4 class="mb-1 text-xl font-semibold">{{ book.title }}</h4>
+    <p class="text- text-base font-medium text-slate-600 dark:text-slate-300">
+      {{ book.author }}
+    </p>
+  </li>
+</ul>

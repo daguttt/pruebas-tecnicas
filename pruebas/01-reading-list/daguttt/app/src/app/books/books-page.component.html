@@ -1,0 +1,22 @@
+<main class="container grid grid-cols-[2fr_1fr] px-5 font-body xl:px-20">
+  <section>
+    <h2 class="mb-6 text-5xl font-semibold">Catálogo</h2>
+    <ng-container
+      *ngIf="booksService.booksCatalog() as books; else booksSkeleton">
+      <div class="mb-8">
+        <p class="mb-2 text-3xl font-normal">
+          Libros disponibles: <strong>{{ books.size }}</strong>
+        </p>
+        <p class="text-xl font-normal">
+          Libros en la lista de lectura: <strong>{{ books.size }}</strong>
+        </p>
+      </div>
+      <app-books-list [books]="books.values()" />
+    </ng-container>
+    <ng-template #booksSkeleton>
+      <p>Loading books...</p>
+    </ng-template>
+  </section>
+
+  <app-reading-list />
+</main>
